@@ -959,6 +959,9 @@
    <property name="maximum">
     <number>500</number>
    </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
    <property name="value">
     <number>0</number>
    </property>
@@ -997,6 +1000,9 @@
    </property>
    <property name="maximum">
     <number>500</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
    </property>
    <property name="value">
     <number>0</number>
@@ -1037,6 +1043,9 @@
    <property name="maximum">
     <number>500</number>
    </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
    <property name="value">
     <number>0</number>
    </property>
@@ -1075,6 +1084,9 @@
    </property>
    <property name="maximum">
     <number>500</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
    </property>
    <property name="value">
     <number>0</number>
@@ -1115,6 +1127,9 @@
    <property name="maximum">
     <number>500</number>
    </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
    <property name="value">
     <number>0</number>
    </property>
@@ -1153,6 +1168,9 @@
    </property>
    <property name="maximum">
     <number>500</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
    </property>
    <property name="value">
     <number>0</number>
@@ -1193,6 +1211,9 @@
    <property name="maximum">
     <number>500</number>
    </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
    <property name="value">
     <number>0</number>
    </property>
@@ -1231,6 +1252,9 @@
    </property>
    <property name="maximum">
     <number>500</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
    </property>
    <property name="value">
     <number>0</number>
@@ -1271,6 +1295,9 @@
    <property name="maximum">
     <number>500</number>
    </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
    <property name="value">
     <number>0</number>
    </property>
@@ -1309,6 +1336,9 @@
    </property>
    <property name="maximum">
     <number>500</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
    </property>
    <property name="value">
     <number>0</number>
