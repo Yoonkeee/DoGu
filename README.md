@@ -1,3 +1,3 @@
 # DoGu - LoL Spell Checker  
 ## Version 1.0  
-### [´Ù¿î·Îµå ¸µÅ©](https://github.com/Yoonkeee/DoGu/raw/master/DoGu%20v1.0.zip)
+### [ë‹¤ìš´ë¡œë“œ](https://github.com/Yoonkeee/DoGu/raw/master/DoGu%20v1.0.zip)
