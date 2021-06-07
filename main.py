@@ -318,8 +318,8 @@ class WindowClass(QMainWindow, form_class) :
 
 
 #-----------------------------------------------------------------------
-
-api_key = '?api_key=' + api_key
+entered_api_key = ''
+api_key = '?api_key=' + entered_api_key
 version = '11.1.1'
 urls = {
     'get_id' : 'https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/',
@@ -422,8 +422,12 @@ if __name__ == "__main__" :
     #WindowClass의 인스턴스 생성
     myWindow = WindowClass()
     #프로그램 화면을 보여주는 코드
+    # global entered_api_key
+    # global api_key
     myWindow.show()
     pyautogui.alert('아이디 검색 후 게임 시간을 현재 시간과 동일하게 맞춘 후 사용! 텔레포트는 레벨 맞추고 누르기!',
                     '사용법!')
+    entered_api_key = pyautogui.prompt('Enter API Key')
+    api_key = '?api_key=' + entered_api_key
     #프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
     app.exec_()
