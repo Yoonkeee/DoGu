@@ -389,7 +389,10 @@ def get_match_info(summoner_name):
     spell_2 = spells_id[user['spell2Id']]['name']
     kor_spell1 = spells_id[user['spell1Id']]['kr_name']
     kor_spell2 = spells_id[user['spell2Id']]['kr_name']
-    champ, kor_champ = champions_id[str(user['championId'])]
+    try:
+        champ, kor_champ = champions_id[str(user['championId'])]
+    except:
+        champ, kor_champ = 'null', 'null'
     cosmic_insight = 8347 in user['perks']['perkIds']
     match['players'][color][champ] = [spell_1, spell_2, cosmic_insight, kor_champ,
                                       kor_spell1, kor_spell2]
