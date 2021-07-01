@@ -297,7 +297,7 @@ class WindowClass(QMainWindow, form_class) :
             enemy_spells[i].setStyleSheet('image : url(images/spells/'+spells[i]+'.png);')
             if spells[i] == 'Teleport':
                 self.teleport_bool[i // 2] = True
-                self.levels[i // 2].resize(84,84)
+                self.levels[i // 2].resize(84, 84)
 
         cosmic = [self.cosmic1, self.cosmic2, self.cosmic3, self.cosmic4, self.cosmic5]
         for i in range(5):
@@ -307,14 +307,22 @@ class WindowClass(QMainWindow, form_class) :
             else:
                 self.cosmic_bool[i] = False
                 cosmic[i].setStyleSheet('image : url(images/buttons/no_cosmic.png);')
-        self.timerVar.start()
-        minute, second = elapsed_time(match_info)
-        if len(minute) < 2: minute = '0'+minute
-        if len(second) < 2: second = '0'+second
 
-        self.current_time = int(minute) * 60 + int(second)
-        self.gametime_min.setTime(QTime.fromString(minute, 'mm'))
-        self.gametime_sec.setTime(QTime.fromString(second, 'ss'))
+        shoes = [self.ionia1, self.ionia2, self.ionia3, self.ionia4, self.ionia5]
+        for i in range(5):
+            shoes[i].setStyleSheet('image : url(images/buttons/no_ionia.png);')
+
+        self.timerVar.start()
+        # minute, second = elapsed_time(match_info)
+        # if len(minute) < 2: minute = '0'+minute
+        # if len(second) < 2: second = '0'+second
+        #
+        # self.current_time = int(minute) * 60 + int(second)
+        # self.gametime_min.setTime(QTime.fromString(minute, 'mm'))
+        # self.gametime_sec.setTime(QTime.fromString(second, 'ss'))
+
+        self.gametime_min.setTime(QTime.fromString('00', 'mm'))
+        self.gametime_sec.setTime(QTime.fromString('00', 'ss'))
 
 
 #-----------------------------------------------------------------------
