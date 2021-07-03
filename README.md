@@ -1,8 +1,9 @@
 # DoGu - LoL Spell Checker  
 ## Version 1.04  
-### [다운로드](https://github.com/Yoonkeee/DoGu/raw/master/DoGu%20v1.04.zip)
-  
+### [다운로드](https://github.com/Yoonkeee/DoGu/raw/master/Dogu%20v1.04.zip)
+
 ## Updated  
+
 ### 1.02  
 신규 챔피언 사진이 아직 업데이트되지 않은 경우 종료되는 문제 수정  
 
