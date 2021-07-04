@@ -15,7 +15,7 @@ from datetime import datetime
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QApplication, QWidget
 
-form_class = uic.loadUiType("untitled.ui")[0]
+form_class = uic.loadUiType("Dogu_PyQt.ui")[0]
 api_key = 'RGAPI-5a937c8a-f537-435d-ac3a-1c6ad7765f9e'
 #화면을 띄우는데 사용되는 Class 선언
 class WindowClass(QMainWindow, form_class) :
@@ -36,7 +36,7 @@ class WindowClass(QMainWindow, form_class) :
         self.cosmic_bool = [False] * 5
         self.spell_bool = [True] * 10
         self.spell_cooldown = [0] * 10
-        self.current_cooldown = [0] * 10
+        self.current_cooldown = [0] * 10  # 현재 스펠 쿨타임(초)
         self.spells = []
         self.kor_champs = []
         self.kor_spells = []
@@ -111,7 +111,7 @@ class WindowClass(QMainWindow, form_class) :
         self.current_time = self.gametime_min.time().minute() * 60 + \
                             self.gametime_sec.time().second()
 
-    def bar_timer(self):
+    def bar_timer(self):  # 매초 실행되는 함수
         self.current_cooldown = [self.current_cooldown[i] - 1 for i in range(10)]
         log = []
         for i in range(10):
@@ -127,13 +127,21 @@ class WindowClass(QMainWindow, form_class) :
                 self.spell_cooldown[i] = 0
                 self.spell_buttons[i].setStyleSheet('image : url(images/spells/' + self.spells[i] + '.png);')
                 self.spell_labels[i].clear()
+        if False not in self.spell_bool:
+            log, self.log_str = [], ''
         self.log = sorted(log[:])
         m, s = str(self.current_time // 60), str(self.current_time % 60)
-        if len(m) < 2: m='0'+m
-        if len(s) < 2: s='0'+s
+        if len(m) < 2:
+            m = '0'+m
+        if len(s) < 2:
+            s = '0'+s
         self.gametime_min.setTime(QTime.fromString(m, 'mm'))
         self.gametime_sec.setTime(QTime.fromString(s, 'ss'))
         self.current_time += 1
+        # print(self.log_label, self.log_str)
+        print(self.spells)
+        print(self.spell_bool)
+        print('log str : ', self.log_str)
         self.log_label.setText(self.log_str)
 
     def ionia1_clicked(self): self.change_ionia_img(0)
@@ -184,13 +192,14 @@ class WindowClass(QMainWindow, form_class) :
         # 현재시간 + 현재쿨(t)
         log = ''
         for i in range(len(self.log)):
-            t, champ = self.log[i]
+            t, champ = self.log[i]  # 초, 챔피언 이름
             t += self.current_time
             m = str(t // 60)
             s = str((t-1) % 60)
             if len(m) < 2: m = '0' + m
             if len(s) < 2: s = '0' + s
             log = (log + m+':'+s+' '+champ+' ')
+        print('line 204', log)
         self.log_str = log
 
     def set_level(self, i):
