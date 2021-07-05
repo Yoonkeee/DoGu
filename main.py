@@ -65,7 +65,7 @@ class WindowClass(QMainWindow, form_class) :
         self.spell_labels = [self.spell_label1, self.spell_label2, self.spell_label3,
                            self.spell_label4, self.spell_label5, self.spell_label6,
                            self.spell_label7, self.spell_label8, self.spell_label9,
-                           self.spell_label10,]
+                           self.spell_label10]
         self.ionia1.clicked.connect(self.ionia1_clicked)
         self.ionia2.clicked.connect(self.ionia2_clicked)
         self.ionia3.clicked.connect(self.ionia3_clicked)
@@ -138,10 +138,6 @@ class WindowClass(QMainWindow, form_class) :
         self.gametime_min.setTime(QTime.fromString(m, 'mm'))
         self.gametime_sec.setTime(QTime.fromString(s, 'ss'))
         self.current_time += 1
-        # print(self.log_label, self.log_str)
-        print(self.spells)
-        print(self.spell_bool)
-        print('log str : ', self.log_str)
         self.log_label.setText(self.log_str)
 
     def ionia1_clicked(self): self.change_ionia_img(0)
@@ -184,8 +180,10 @@ class WindowClass(QMainWindow, form_class) :
         s = self.current_time - (self.spell_cooldown[i] - self.current_cooldown[i])
         m = str(s // 60)
         s = str(s % 60)
-        if len(m) < 2: m = '0'+m
-        if len(s) < 2: s = '0'+s
+        if len(m) < 2:
+            m = '0'+m
+        if len(s) < 2:
+            s = '0'+s
         self.spell_labels[i].setText(str(self.kor_spells[i] + ' ' + m + ':' + s))
         # 01:00  06:00  03:00  2분지남 3분남음 현재시간 - 지난시간 지난시간=스펠쿨-현재쿨
         # 현재시간 - (스펠쿨 - 현재쿨)
@@ -199,7 +197,6 @@ class WindowClass(QMainWindow, form_class) :
             if len(m) < 2: m = '0' + m
             if len(s) < 2: s = '0' + s
             log = (log + m+':'+s+' '+champ+' ')
-        print('line 204', log)
         self.log_str = log
 
     def set_level(self, i):
@@ -284,6 +281,20 @@ class WindowClass(QMainWindow, form_class) :
         self.spell_cooldown = spell_cooldown[:]
         self.kor_champs = kor_champs[:]
         self.kor_spells = kor_spells[:]
+        # Reset Default ----------------------------
+        self.log_str = ''
+        self.spell_bool = [True] * 10
+        self.ionia_bool = [False] * 5
+        self.spell_cooldown = [0] * 10
+        self.current_cooldown = [0] * 10
+        self.teleport_bool = [False] * 5
+        for i in range(10):
+            self.spellbars[i].reset()
+        for i in range(5):
+            # print(self.levels[i])
+            self.current_level[i] = 1
+            self.levels[i].setValue(1)
+        # End Reset Default -------------------------
         spell_set = set(spells)
         spells_image = {}
         champs_image = {}

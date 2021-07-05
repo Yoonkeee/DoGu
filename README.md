@@ -1,6 +1,6 @@
-# DoGu - LoL Spell Checker  
-## Version 1.04  
-### [다운로드](https://github.com/Yoonkeee/DoGu/raw/master/Dogu%20v1.04.zip)
+# Dogu - LoL Spell Checker  
+## Version 1.05  
+### [다운로드](https://github.com/Yoonkeee/DoGu/raw/master/Dogu%20v1.05.zip)
 
 ## Updated  
 
@@ -16,10 +16,12 @@
 
 ### 1.05  
 로그에서 마지막 스펠 대기시간이 초과되어도 남아있던 버그 수정  
+재검색시 기존 정보 모두 초기화  
+
 
 
 ## To Be Updated  
-- 게임 시작, 종료 버튼 추가  
+- 게임 시작, 종료 버튼 추가(타이머 진행중 게임이 끝난 플레이어를 검색시 에러로 인한 비정상 종료 발생)  
 - 챔피언 라인 순서(탑, 정글, 미드, 바텀, 서포터) 설정 기능 추가  
 - 스펠 사용 시간 입력창 추가  
-- 재검색시 스펠 카운트다운 초기화 설정  
+- 
